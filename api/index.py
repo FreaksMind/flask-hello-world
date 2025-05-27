@@ -6,7 +6,7 @@ CORS(app)
 @app.route("/api/post_question", methods=["GET"])
 def test():
     text = ""
-    with open('ll.txt', 'r') as f:
+    with open('data/ll.txt', 'r') as f:
         text = f.readline()
     return jsonify({"status": "success", "message": text})
 
