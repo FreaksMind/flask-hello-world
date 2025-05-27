@@ -1,11 +1,11 @@
-from flask import Flask
-
+from flask import Flask, jsonify
+from flask_cors import CORS
 app = Flask(__name__)
+CORS(app)
 
-@app.route('/')
-def home():
-    return 'Hello, World!'
+@app.route("/api/post_question", methods=["POST"])
+def test():
+    return jsonify({"status": "success", "message": "Integrate Flask Framework with Next.js"})
 
-@app.route('/about')
-def about():
-    return 'About'
+if __name__ == "__main__":
+    app.run()
