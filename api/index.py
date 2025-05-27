@@ -5,7 +5,10 @@ CORS(app)
 
 @app.route("/api/post_question", methods=["GET"])
 def test():
-    return jsonify({"status": "success", "message": "Integrate Flask Framework with Next.js"})
+    text = ""
+    with open('ll.txt', 'r') as f:
+        text = f.readline()
+    return jsonify({"status": "success", "message": text})
 
 if __name__ == "__main__":
     app.run()
